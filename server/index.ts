@@ -1,5 +1,5 @@
 import { publicProcedure, router } from './trpc';
-
+import { createHTTPServer } from '@trpc/server/adapters/standalone';
 import { z } from "zod";
  
 const todoInput = z.object({
@@ -17,6 +17,9 @@ const appRouter = router({
         return {id:"1"}
     })
 
+});
+const server = createHTTPServer({
+  router: appRouter,
 });
  
 
