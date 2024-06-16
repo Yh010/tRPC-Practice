@@ -35,6 +35,9 @@ const appRouter = router({
         }))
         .mutation(async (opts) => {
             console.log(opts.ctx.username)
+            return {
+                id:"2"
+            }
         })
 });
 const server = createHTTPServer({
