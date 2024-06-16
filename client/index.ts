@@ -17,7 +17,14 @@ async function main() {
         title: "do something",
         description: "do something great"
     })    
+    
+  const signupresponse = await trpc.signUpUser.mutate({
+    email: "yash@gmail.com",
+    password: "password"
+    })
 
-    console.log(response)
+    console.log(signupresponse)
 }
+
+main()
 
